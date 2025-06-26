@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('blogs', BlogController::class);
+Route::get('/get-blog-by-slug', [BlogController::class, 'showBySlug']);
