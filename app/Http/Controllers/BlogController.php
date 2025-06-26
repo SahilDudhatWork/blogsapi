@@ -20,7 +20,8 @@ class BlogController extends Controller
         $validatedData = $request->validate([
             'slug' => 'required|string|unique:blogs,slug',
             'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'short_description' => 'string',
+            'content' => 'string',
             'image_path' => 'nullable|string',
             'table_of_content' => 'nullable|array',
         ]);
@@ -44,6 +45,7 @@ class BlogController extends Controller
         $validatedData = $request->validate([
             'slug' => 'required|string|unique:blogs,slug,' . $blog->id,
             'title' => 'required|string|max:255',
+            'short_description' => 'required|string',
             'content' => 'required|string',
             'image_path' => 'nullable|string',
             'table_of_content' => 'nullable|array',

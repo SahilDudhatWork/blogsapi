@@ -12,6 +12,7 @@ class Blog extends Model
     protected $fillable = [
         'slug',
         'title',
+        'short_description',
         'content',
         'image_path',
         'table_of_content',
